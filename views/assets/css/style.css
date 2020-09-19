@@ -1,0 +1,47 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #F3E8C0 !important;
+}
+nav{
+    background: #472210;
+}
+
+nav img{
+    width: 100px;
+}
+
+nav div ul li:hover{
+    background: wheat;
+}
+
+nav div ul li a:hover{
+    margin: 0 15px;
+    color: #472210 !important;
+    font-weight: bold;
+}
+.entrar{
+    color: white;
+    border: 1px solid wheat;
+}
+.entrar:hover{
+    color: white;
+    border: 1px solid 472210;
+}
+.legend{
+    border-bottom: 1px solid black;
+}
+b{
+    color: #472210 !important;
+}
+.price{
+    font-weight: bold;
+}
+.card{
+    background: #F3E8C0;
+    border: 1px solid #472210;
+}
+
+.card:hover{
+    border: 2px solid #472210;
+    background: #FBF3D7;
+}
