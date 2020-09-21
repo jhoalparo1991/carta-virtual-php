@@ -1,5 +1,5 @@
   <?php
-$data = $this->msg; 
+$data = $this->msg2; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,17 +21,23 @@ $data = $this->msg;
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo constant('URL'); ?>">HOME</a>
-      </li>
       <?php foreach ($data as $rows) { ?>
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo constant('URL') ?>products/list/<?php echo $rows['id']  ?>"><?php echo $rows['name_category'] ?></a>
+        <a class="nav-link" href="<?php echo constant('URL') ?>products/list/<?php echo $rows['id']  ?>"><?php echo $rows['name_category'] ?>
+          
+        </a>
       </li>
           <?php } ?>
     </ul>
     <div class="ml-auto">
-        <a href="<?php echo constant('URL') ?>admin/" class="nav-link entrar">ENTRAR</a>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+             <a href="<?php echo constant('URL') ?>" class="nav-link entrar">CAMBIAR SEDE</a>
+          </li>
+          <li class="nav-item">
+             <a href="<?php echo constant('URL') ?>main" class="nav-link entrar">ENCUESTA</a>
+          </li>
+        </ul>
     </div>
   </div>
 </nav>

@@ -12,6 +12,7 @@
 			require_once 'views/'.$name.'.php';
 		}
 
+
 	}
 
  ?>

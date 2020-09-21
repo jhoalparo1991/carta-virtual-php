@@ -53,8 +53,8 @@ class App{
 	}
 
 	function renderMain(){
-		require 'controller/main.php';
-        $controller = new Main();
+		require 'controller/home.php';
+        $controller = new Home();
         return false;
 	}
 

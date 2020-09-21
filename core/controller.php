@@ -13,6 +13,7 @@
 	    function getAllCategories(){
 	    	$this->model = new Categories();
 	    	$data = $this->model->getAllCategories();
+	    	$this->view->msg2 = $data;
 	    	return $data;
 	    }
 	}
