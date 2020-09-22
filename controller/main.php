@@ -21,14 +21,23 @@
 	    function survey(){
 
 	    		if(isset($_POST['survey'])){
-	    		$fullname = $_POST['fullname'];
-	    		$phone = $_POST['phone'];
-	    		$type_document = $_POST['type_document'];
-	    		$document = $_POST['document'];
-	    		$temperature = $_POST['temperature'];
-	    		$symptons = $_POST['symptons'];
-	    		$enterprise = $_POST['enterprise'];
-	    		$campus = $_POST['campus'];
+	    		$sFullname = $_POST['fullname'];
+	    		$sPhone = $_POST['phone'];
+	    		$sType_document = $_POST['type_document'];
+	    		$sDocument = $_POST['document'];
+	    		$sTemperature = $_POST['temperature'];
+	    		$sSymptons = $_POST['symptons'];
+	    		$sEnterprise = $_POST['enterprise'];
+	    		$sCampus = $_POST['campus'];
+
+	    		$fullname = filter_var($sFullname,FILTER_SANITIZE_SPECIAL_CHARS);
+	    		$phone = filter_var($sPhone,FILTER_SANITIZE_SPECIAL_CHARS);
+	    		$document = filter_var($sDocument,FILTER_SANITIZE_SPECIAL_CHARS);
+	    		$type_document = filter_var($sType_document,FILTER_SANITIZE_SPECIAL_CHARS);
+	    		$temperature = filter_var($sTemperature,FILTER_SANITIZE_SPECIAL_CHARS);
+	    		$symptons = filter_var($sSymptons,FILTER_SANITIZE_SPECIAL_CHARS);
+	    		$enterprise = filter_var($sEnterprise,FILTER_SANITIZE_SPECIAL_CHARS);
+	    		$campus = filter_var($sCampus,FILTER_SANITIZE_SPECIAL_CHARS);
 
 	    		if (empty($fullname) || empty($phone) || empty($document) || empty($temperature) || empty($enterprise)
 	    		|| empty($campus)) {

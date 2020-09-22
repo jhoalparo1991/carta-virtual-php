@@ -19,12 +19,13 @@ class Database{
      function connect(){
         try {
             $connection = "mysql:host=".$this->hostname.";dbname=".$this->database;
-        $pdo = new PDO($connection,$this->username,$this->password);
+            $pdo = new PDO($connection,$this->username,$this->password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      //   echo "Conectado con exito";
         return $pdo;
 
         } catch (PDOExecption $ex) {
-            die($ex->getMessage());
+            die("Error in database : ".$ex->getMessage());
         }
     }
 

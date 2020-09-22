@@ -14,6 +14,8 @@
 					     VALUES(:fullname,:phone,:type_document,:document,:temperature,:symptons,:enterprise,:campus)";
 
 			$query = $this->db->connect()->prepare($sql);
+
+
 			$row = $query->execute([
 				'fullname'=>$data['fullname'],'phone'=>$data['phone'],
 				'type_document' => $data['type_document'],'document'=>$data['document'],

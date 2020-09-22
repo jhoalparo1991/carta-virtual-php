@@ -1,30 +1,19 @@
 <?php
 $items = $this->data;
-include_once './views/includes/header.php' ?>
-<style>
-    .title{
-        width: 100%;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-    .title_section{
-        margin: 0 auto;
-        text-align: center;
-        display: block;
-        background: #472210;
-        color: #fff;
-        padding: 20px;
-        font-size: 50px;
-        font-family: 'Oleo Script', cursive;
-        border-radius: 100px;
-}
-</style>
+$general = isset($items[0]['general_description']) ? $items[0]['general_description'] : null;
+$comment = isset($items[0]['comment']) ? $items[0]['comment'] : null;
+include_once './includes/header.php' ?>
 <div class="container py-2">
     
     <div class="row"> 
        <?php if($this->title != null) {?>
          <h1 class="title mx-auto"><span class="title_section mx-auto"><?php echo $this->title;?></span></h1>
-     <?php } ?>       
+       <?php } ?>  
+       <?php if($general != null) {?>
+         <div class="alert">
+             <p class="text-center"><b><?php echo $general;?></b></p>
+         </div>
+       <?php } ?>     
       <?php  foreach($items as $item){ ?>
         <div class="col-md-6 col-sm-12 col-lg-6 mb-2 mx-auto">
             <div class="card">
@@ -59,7 +48,12 @@ include_once './views/includes/header.php' ?>
                 </div>
             </div>
         </div>
-            <?php }?>
+            <?php }?> 
     </div>
+            <?php if($comment != null) {?>
+         <div class="alert">
+             <p class="mx-auto text-center"><b><?php echo $comment;?></b></9>
+         </div>
+       <?php } ?>
 </div>
-<?php include_once './views/includes/footer.php' ?>
+<?php include_once './includes/footer.php' ?>

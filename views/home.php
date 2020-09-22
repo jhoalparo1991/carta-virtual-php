@@ -13,21 +13,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo constant('URL') ?>assets/css/style.css">
 <div class="container py-4">
-
 	<div class="row">
-		<div class="col-sm-12 col-md-6 col-lg-6 mx-auto">
+		<div class="col-sm-10 col-md-6 col-lg-6 mx-auto col-campus">
 			<?php foreach ($data as $row) { ?>
-			<a href="<?php echo constant('URL'); echo "main/campus/"?><?php echo $row['id'] ?>" class="btn btn-info btn-block mb-4">
+			<a href="<?php echo constant('URL');?>main/campus/<?php echo $row['id'] ?>" class="btn btn-info btn-block mb-4 campus-link">
 				<?php echo $row['name_enterprise'] ?>
 			</a>
 			<?php }?>
 		</div>
 	</div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<?php include_once './includes/footer.php' ?>
 </body>
 </html>

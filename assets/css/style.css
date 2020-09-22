@@ -1,0 +1,93 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #F3E8C0 !important;
+}
+nav{
+    background: #472210;
+}
+
+nav img{
+    width: 100px;
+}
+
+nav div ul li:hover{
+    background: wheat;
+}
+
+nav div ul li a:hover{
+    margin: 0 15px;
+    color: #472210 !important;
+    font-weight: bold;
+}
+.entrar{
+    color: white;
+    border: 1px solid wheat;
+}
+.entrar:hover{
+    color: white;
+    border: 1px solid 472210;
+}
+.legend{
+    border-bottom: 1px solid black;
+}
+b{
+    color: #472210 !important;
+}
+.price{
+    font-weight: bold;
+}
+.card{
+    background: #F3E8C0;
+    border: 1px solid #472210;
+}
+
+.card:hover{
+    border: 2px solid #472210;
+    background: #FBF3D7;
+}
+
+    .title{
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .title_section{
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+        background: #472210;
+        color: #fff;
+        padding: 20px;
+        font-size: 50px;
+        font-family: 'Oleo Script', cursive;
+        border-radius: 100px;
+}
+    footer{
+    width: 100%;
+    
+    bottom:0;
+}
+footer p{
+    text-align: center;
+}
+.col-campus {
+    border:1px solid #FBF3D7;
+    padding: 30px;
+    border-radius: 30px;
+    background: #fff;
+
+}
+
+.campus-link{
+    background: #FBF3D7;
+    font-size: 30pt;
+    color: #472210;
+    border: none;
+}
+.col-campus:hover{
+    border:5px double #472210;
+}
+.campus-link:hover{
+    background: #472210;
+    color:#FBF3D7; 
+}

@@ -1,4 +1,4 @@
-<?php include_once './views/includes/header.php' ?>
+<?php include_once './includes/header.php' ?>
 <div class="container py-4">
     <div class="row">
     	<div class="col-md-6 col-sm-12 mx-auto">
@@ -13,11 +13,11 @@
 
     					<div class="form-group">
     						<label for="fullname">Nombres y apellidos</label>
-    						<input type="text" name="fullname" class="form-control" placeholder="Ingrese nombres y apellidos" autofocus="on" autocomplete="off" >
+    						<input type="text" name="fullname" class="form-control" placeholder="Ingrese nombres y apellidos" autofocus="on" autocomplete="off" required>
     					</div>
     					<div class="form-group">
     						<label for="phone">Telefono</label>
-    						<input type="number" name="phone" class="form-control" placeholder="Ingrese un número telefonico" autocomplete="off" >
+    						<input type="number" name="phone" step="1" min="1" max="99999999999" class="form-control" placeholder="Ingrese un número telefonico" autocomplete="off" required>
     					</div>
     					<div class="form-group">
     						<label for="type_document">Tipo Documento</label>
@@ -28,11 +28,11 @@
     							<option value="CE">Cédula Extranjera</option>
     						</select>
     						<label for="document">Número de documento</label>
-    						<input type="number" name="document" class="form-control" placeholder="Ingrese un documento" autocomplete="off" >
+    						<input type="number" name="document" step="1" min="1" max="99999999999" class="form-control" placeholder="Ingrese un documento" autocomplete="off" required>
     					</div>
     					<div class="form-group">
     						<label for="temperature">Temperatura</label>
-    						<input type="number" name="temperature" class="form-control" placeholder="0°" autocomplete="off" >
+    						<input type="number" step=".1" min="1" max="100" name="temperature" class="form-control" placeholder="0°" autocomplete="off" required>
     					</div>
     					<div class="form-group">
     						<div class="alert alert-info">
@@ -44,8 +44,8 @@
     						</div>    				
     					</div>
     				    <div class="form-group">
-    				    	<input type="hidden" name="enterprise" value="Kuty Bogota">
-    				    	<input type="hidden" name="campus" value="<?php $_SESSION['id']; ?>">
+    				    	<input type="hidden" name="enterprise" value="Kuty Bogota" required>
+    				    	<input type="hidden" name="campus" value="<?php echo $_SESSION['id']; ?>" required>
     				    </div>
     					<div class="form-group">
     						<input type="submit" value="Registrar" name="survey" class="btn btn-success btn-block">
@@ -56,4 +56,4 @@
     	</div>
     </div>
 </div>
-<?php include_once './views/includes/footer.php' ?>
+<?php include_once './includes/footer.php' ?>
