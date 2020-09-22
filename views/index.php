@@ -4,9 +4,10 @@
     	<div class="col-md-6 col-sm-12 mx-auto">
     		<div class="card">
     			<div class="card-header">
-    				<h3 class="card-title text-center" style="color: #472210;">
-    					Encuesta diagnostico Kuty
+    				<h3 class="card-title text-center title-survey" style="color: #472210;">
+                        ENCUESTA DIAGNOSTICO CLIENTES PANADERIA KUTY
     				</h3>
+                    <p class="text-center"><b>Resolución 1050 de 2020</b></p>
     			</div>
     			<div class="card-body">
     				<form action="<?php echo constant('URL'); ?>main/survey" method="POST">
@@ -35,12 +36,12 @@
     						<input type="number" step=".1" min="1" max="100" name="temperature" class="form-control" placeholder="0°" autocomplete="off" required>
     					</div>
     					<div class="form-group">
-    						<div class="alert alert-info">
+    						<div class="alert" style="border: 1px solid #472210;">
     						<p>
-    							<b>¿Ha tenido presentado usted síntomas como gripa, tos, perdida de algun sentido en los ultimos 14 días?</b> 
+    							<b>¿Ha tenido durante los ultimos 14 días síntomas de gripa o dificultad respiratoria ?</b> 
     						</p>	    				
-    						<label for="symptons"><input type="radio" name="symptons" value="Si">Si </label> 
-    						<label for="symptons"><input type="radio" name="symptons" value="No" checked>No</label>
+    						<label for="symptons"><input type="radio" name="symptons" value="Si"><b>Si</b> </label> 
+    						<label for="symptons"><input type="radio" name="symptons" value="No" checked><b>No</b></label>
     						</div>    				
     					</div>
     				    <div class="form-group">
