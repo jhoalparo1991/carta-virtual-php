@@ -9,7 +9,7 @@
 		}
 
 
-		function getEnterprise(){
+		function getAll(){
 			$items = [];
 			try{
 			$query = $this->db->connect()->query("SELECT id,name_enterprise FROM enterprise");
@@ -19,7 +19,7 @@
 	    	}
 	    	return $items;
 	    	}catch(PDOException $e){
-	    		die($e->getMessage());
+	    		exit();
 	    	}
 		}
 

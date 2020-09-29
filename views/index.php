@@ -1,4 +1,3 @@
-<?php include_once './includes/header.php' ?>
 <div class="container py-4">
     <div class="row">
     	<div class="col-md-6 col-sm-12 mx-auto">
@@ -10,15 +9,15 @@
                     <p class="text-center"><b>Resolución 1050 de 2020</b></p>
     			</div>
     			<div class="card-body">
-    				<form action="<?php echo constant('URL'); ?>main/survey" method="POST">
+    				<form action="<?=URL.'survey/create' ?>" method="POST">
 
     					<div class="form-group">
     						<label for="fullname">Nombres y apellidos</label>
-    						<input type="text" name="fullname" class="form-control" placeholder="Ingrese nombres y apellidos" autofocus="on" autocomplete="off" required>
+    						<input type="text" value="<?=isset($_SESSION['fullname']) ? $_SESSION['fullname'] : ''?>" name="fullname" class="form-control" placeholder="Ingrese nombres y apellidos" autofocus="on" autocomplete="off" >
     					</div>
     					<div class="form-group">
     						<label for="phone">Telefono</label>
-    						<input type="number" name="phone" step="1" min="1" max="99999999999" class="form-control" placeholder="Ingrese un número telefonico" autocomplete="off" required>
+    						<input type="number" value="<?=isset($_SESSION['phone']) ? $_SESSION['phone'] : ''?>" name="phone" step="1" min="1" max="99999999999" class="form-control" placeholder="Ingrese un número telefonico" autocomplete="off" >
     					</div>
     					<div class="form-group">
     						<label for="type_document">Tipo Documento</label>
@@ -29,11 +28,11 @@
     							<option value="CE">Cédula Extranjera</option>
     						</select>
     						<label for="document">Número de documento</label>
-    						<input type="number" name="document" step="1" min="1" max="99999999999" class="form-control" placeholder="Ingrese un documento" autocomplete="off" required>
+    						<input type="number" value="<?=isset($_SESSION['document']) ? $_SESSION['document'] : ''?>" name="document" step="1" min="1" max="99999999999" class="form-control" placeholder="Ingrese un documento" autocomplete="off" >
     					</div>
     					<div class="form-group">
     						<label for="temperature">Temperatura</label>
-    						<input type="number" step=".1" min="1" max="100" name="temperature" class="form-control" placeholder="0°" autocomplete="off" required>
+    						<input type="number" value="<?=isset($_SESSION['temperature']) ? $_SESSION['temperature'] : ''?>" step=".1" min="1" max="100" name="temperature" class="form-control" placeholder="0°" autocomplete="off" >
     					</div>
     					<div class="form-group">
     						<div class="alert" style="border: 1px solid #472210;">
@@ -46,10 +45,11 @@
     					</div>
     				    <div class="form-group">
     				    	<input type="hidden" name="enterprise" value="Kuty Bogota" required>
-    				    	<input type="hidden" name="campus" value="<?php echo $_SESSION['id']; ?>" required>
+    				    	<input type="hidden" name="campus" value="<?php echo $_SESSION['id_enterprise']; ?>" required>
     				    </div>
     					<div class="form-group">
-    						<input type="submit" value="Registrar" name="survey" class="btn btn-success btn-block">
+    						<input type="submit" value="Registrar" class="btn btn-success btn-block">
+							<small class="text-danger"><?=isset($data['msg']) ? $data['msg'] : ''; ?></small>
     					</div>
     				</form>
     			</div>
@@ -57,4 +57,3 @@
     	</div>
     </div>
 </div>
-<?php include_once './includes/footer.php' ?>

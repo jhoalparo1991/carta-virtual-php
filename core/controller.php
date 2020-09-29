@@ -1,21 +1,23 @@
 <?php 
 
-	require_once './model/categories.php';
 	class Controller 
 	{
 	    
 	    public function __construct()
 	    {
 	    	
-	        $this->view = new Views();
+	        
 	    }
-
-	    function getAllCategories(){
-	    	$this->model = new Categories();
-	    	$data = $this->model->getAllCategories();
-	    	$this->view->msg2 = $data;
-	    	return $data;
-	    }
+		
+		function loadViews($views,$data =[]){
+			$pathView = './views/'.$views.'.php';
+	
+			if(file_exists($pathView)){
+				require_once $pathView;
+			}else{
+				echo "No existe la vista";
+			}
+		}
 	}
 
 

@@ -4,58 +4,42 @@
 class App{
 
 	function __construct(){
-
-	    if( isset($_GET['url']) ){
-
-	    	$url = isset($_GET['url']) ? $_GET['url'] : null;
+			
+			$url = isset($_GET['url']) ? $_GET['url'] : 'home/index';
 	        
 	        $url = rtrim($url,"/");
 	        
-	        $url = explode('/',$url);
+			$url = explode('/',$url);
+			
+			$controllerPath = 'controller/'.ucwords($url[0]).'Controller.php';
+
+			if(file_exists($controllerPath)){
+				require_once $controllerPath;
+				$controller = new $url[0];
+				if(isset($url[1])){
+					if(!empty($url[1])){
+						if(method_exists($controller,$url[1])){
+							$params = "";
+							for ($i=2; $i < count($url); $i++) { 
+								$params .= $url[$i]."/";
+							}
+							$params = rtrim($params,"/");
+							$controller->{$url[1]}($params);
+						}else{
+							header('location: '.URL.'home/index');
+						}
+					}else{
+						header('location: '.URL.'home/index');
+					}
+				}else{
+					header('location: '.URL.'home/index');
+				}
+			}else{
+				header('location: '.URL.'home/index');
+			}
 
 
-	       
-
-	        if(empty($url[0])){
-	        	$this->renderMain();
-	        }
-
-	 		$controllerPath = "controller/".$url[0].".php";
-	        if(file_exists($controllerPath)){
-
-				require $controllerPath;
-	        	$controller = new $url[0];	
-	        	//Numero de elementos de la url
-	        	$nParams = sizeof($url);
-
-	        	if($nParams > 1){
-	        		if($nParams > 2){
-	        		$param = [];
-	        		 for($i = 2; $i < $nParams; $i++){
-	        		 	array_push($param,$url[$i]);
-	        		 }
-	        		 
-	        		 $controller->{$url[1]}($param);
-	        	}else{
-	        		$controller->{$url[1]}();
-	        	}	
-	        	}
-	        	
-	        	/*
-	        	if(isset($url[1])){
-	        		$controller->{$url[1]}();	
-	        	}*/
-	        }
-
-	    }else{
-	    	$this->renderMain();
-	    }
-	}
-
-	function renderMain(){
-		require 'controller/home.php';
-        $controller = new Home();
-        return false;
+	    
 	}
 
 }

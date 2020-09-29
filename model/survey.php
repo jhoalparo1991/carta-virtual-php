@@ -1,6 +1,6 @@
 <?php 
 
-	class Survey{
+	class Survies{
 
 
 		function __construct(){
@@ -29,7 +29,7 @@
 				return false;
 			}	
 		}catch(PDOException $e){
-			die($e->getMessage());
+			exit();
 		}
 		}
 	}

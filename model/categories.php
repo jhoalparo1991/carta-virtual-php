@@ -12,17 +12,17 @@
 	        
 	    }
 
-	    function getAllCategories(){
+	    function getAll(){
 	    	$items = array();
 	    	try{
-	    	$query = $this->db->connect()->query('SELECT id,name_category,code as cod FROM categories ORDER BY id');
+	    	$query = $this->db->connect()->query('SELECT id,name_section FROM section ORDER BY id');
 	    	
 	    	while($rows = $query->fetch()){
 	    		array_push($items, $rows);
 	    	}
 	    	return $items;
 	    	}catch(PDOException $e){
-	    		die($e->getMessage());
+	    		exit();
 	    	}
 	   
 	    }
